@@ -1,0 +1,25 @@
+<section class="c-hero">
+  <div class="c-hero__container u-ratio-container u-ratio-container__3:1">
+    <picture>
+      <source
+        ng-if="image.imgSrc"
+        srcset="{{image.imgSrc}}"
+        ng-repeat="image in $ctrl.heroImage track by $index"
+        media="{{image.size}}"
+      >
+
+      <img
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        ng-attr-data-src="{{$ctrl.heroImage.xl.imgSrc}}"
+        class="u-img__fluid u-ratio-container__item js-lazyload"
+        alt="{{$ctrl.heroImage.alt}}"
+        data-sizes="auto"
+      />
+    </picture>
+    <div class="c-hero__cta">
+      <a href="#" class="u-img__sprite c-hero__btn"></a>
+    </div>
+  </div>
+  <marketing></marketing>
+  <products></products>
+</section>

@@ -1,0 +1,10 @@
+.u-img {
+  &__fluid {
+    max-width: 100%;
+  }
+
+  &__sprite {
+    background-image: url('./img/sprites/sprites.png');
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,11 @@
+<h4 class="c-marketing__title" ng-bind="$ctrl.list.title"></h4>
+<ul
+  class="c-marketing__list"
+  ng-class="$ctrl.listClass"
+>
+  <li
+    class="c-marketing__item"
+    ng-repeat="item in $ctrl.list.steps track by $index"
+    ng-bind="item"
+  ></li>
+</ul>

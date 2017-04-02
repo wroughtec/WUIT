@@ -1,0 +1,30 @@
+.c-product {
+  padding-bottom: 2rem;
+
+  &__link {
+    display: block;
+    width: map-get($productSize, width);
+    height: map-get($productSize, height);
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    margin-left: auto;
+
+    @each $name, $states in $products {
+      &--#{$name} {
+        @each $state, $value in $states {
+          @if $state == defaultState {
+            background-position: $value;
+          }
+
+          @if ($state == hoverState) {
+            &:hover,
+            &:focus {
+              background-position: $value;
+            }
+          }
+        }
+      }
+    }
+  }
+}

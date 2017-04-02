@@ -1,0 +1,15 @@
+<ul class="c-mininav__list">
+  <li
+    class="c-mininav__item"
+    ng-class="'c-navbar__item--' + link.cssClass"
+    ng-repeat="link in $ctrl.items track by $index"
+  >
+    <a
+      ng-if="link.pageUrl"
+      href="{{link.pageUrl}}"
+      class="c-mininav__link"
+      ng-bind="link.name"
+    ></a>
+    <span ng-if="!link.pageUrl" ng-bind="link.name"></span>
+  </li>
+</ul>

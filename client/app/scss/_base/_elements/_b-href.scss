@@ -1,0 +1,10 @@
+a {
+  color: map-get($linkColours, defaultLink);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: map-get($linkColours, hoverLink);
+    text-decoration: underline;
+  }
+}

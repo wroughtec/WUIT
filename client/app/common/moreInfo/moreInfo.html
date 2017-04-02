@@ -1,0 +1,11 @@
+<div class="c-reveal">
+  <h4
+    class="c-reveal__title"
+    ng-bind="$ctrl.title"
+    ng-click="revealBodyOpen = !revealBodyOpen"
+    ng-class="(revealBodyOpen ? 'is-active' : '')"
+  ></h4>
+  <div class="c-reveal__body" ng-class="(revealBodyOpen ? '' : 'is-hidden')">
+    <p class="c-revela__text" ng-bind="$ctrl.description"></p>
+  </div>
+</div>

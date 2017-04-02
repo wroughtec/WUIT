@@ -1,0 +1,7 @@
+.gr-row {
+  @include make-row;
+
+  &--h-center {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,70 @@
+.gr-col {
+  @include make-col-ready;
+
+  &--auto {
+    @include make-col-auto;
+
+    &\@\>\=md {
+      @include media-breakpoint-up('md') {
+        @include make-col-auto;
+      }
+    }
+  }
+
+  &--equal {
+    @include make-col-equal;
+  }
+
+  &__m {
+    &--l {
+      &\@\>\=md {
+        @include media-breakpoint-up('md') {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &__1 {
+    @include make-col(12);
+  }
+
+  &__1\/2 {
+    @include make-col(6);
+
+    &\@md {
+      @include media-breakpoint-only('md') {
+        @include make-col(6);
+      }
+    }
+  }
+
+  &__1\/3 {
+    @include make-col(4);
+
+    &\@\>\=md {
+      @include media-breakpoint-up('md') {
+        @include make-col(4);
+      }
+    }
+
+    &\@\>\=lg {
+      @include media-breakpoint-up('lg') {
+        @include make-col(4);
+      }
+    }
+  }
+
+  &__offset {
+    &--1\/3 {
+      @include make-col-modifier('offset', 4, 12);
+
+      &\@\>\=lg {
+        @include media-breakpoint-up('lg') {
+          @include make-col-modifier('offset', 4, 12);
+        }
+      }
+    }
+  }
+}
+

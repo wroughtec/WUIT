@@ -1,0 +1,33 @@
+.c-hero {
+  background-color: $hero__background;
+
+  &__container {
+    position: relative;
+  }
+
+  &__cta {
+    // half the button height - another 4 px for the padding
+    bottom: -(map-get($hero__btn, height) / 2) - 4;
+
+    padding: .25rem;
+
+    border-radius: .5rem;
+
+    background-color: $hero__background;
+
+    @include horizontal-center();
+  }
+
+  &__btn {
+    display: block;
+    width: map-get($hero__btn, width);
+    height: map-get($hero__btn, height);
+
+    background-position: -10px -833px;
+
+    &:hover,
+    &:focus {
+      background-position:-10px -775px;
+    }
+  }
+}

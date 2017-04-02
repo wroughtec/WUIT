@@ -1,0 +1,33 @@
+<footer class="c-footer-nav">
+  <nav class="c-footer-nav__container">
+    <div class="gr-row gr-row--h-center">
+      <div
+        class="gr-col gr-col--auto"
+        ng-repeat="i in $ctrl.getNumber(5) track by $index"
+      >
+        <ul class="c-footer-nav__list">
+          <li
+            class="c-footer-nav__item c-footer-nav__item--title"
+            ng-bind="$ctrl.footerNav.title"
+          ></li>
+          <li class="c-footer-nav__item" ng-repeat="link in $ctrl.footerNav.links track by $index">
+            <a href="#" class="c-footer-nav__link" ng-bind="link"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="c-mininav">
+    <div class="gr-row">
+      <mininav
+        class="gr-col gr-col__1 gr-col--auto@>=md"
+        items="$ctrl.footerlinks"
+      ></mininav>
+
+      <mininav
+        class="gr-col gr-col__1 gr-col--auto@>=md gr-col__m--l@>=md"
+        items="$ctrl.externalLinks"
+      ></mininav>
+    </div>
+  </nav>
+</footer>

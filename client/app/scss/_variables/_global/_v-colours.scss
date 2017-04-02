@@ -1,0 +1,29 @@
+$baseColours: (
+  'blackOff':           #1b1b1b,
+  'blackPure':          #000,
+  'grayDarker':         #000100,
+  'grayDark':           #283238,
+  'grayCharcoal':       #1b2226,
+  'grayIsh':            #20292e,
+  'grayMid':            #2d3940,
+  'grayGreen':          #636363,
+  'grayLight':          #d8dfe1,
+  'grayLighter':        #e6ebee,
+  'grayLightest':       #f1f5f7,
+  'grayBlue':           #85a5b1,
+  'whitePure':          #fff
+);
+
+$brandColours: (
+  'primaryColour':      #c50d00,
+  'primaryBackground':  map-get($baseColours, blackPure),
+  'primaryFont':        map-get($baseColours, whitePure),
+  'navColour':          map-get($baseColours, grayGreen)
+);
+
+$linkColours: (
+  'defaultLink':        map-get($brandColours, primaryColour),
+  'hoverLink':          darken(map-get($brandColours, primaryColour), 10%),
+  'activeLink':         map-get($baseColours, grayLight),
+  'disabledLink':       map-get($baseColours, grayLight)
+);

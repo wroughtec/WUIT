@@ -1,0 +1,11 @@
+body {
+  height: 100vh;
+  margin: 0;
+
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  // Using a svg sprite may be a better choice
+  background-image: $page__background;
+}

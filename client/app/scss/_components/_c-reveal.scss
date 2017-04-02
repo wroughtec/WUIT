@@ -1,0 +1,31 @@
+.c-reveal {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: $reveal__background;
+  color: $reveal__font;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      color: $reveal__hover;
+
+      cursor: pointer;
+    }
+
+    &.is-active {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__body {
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+}

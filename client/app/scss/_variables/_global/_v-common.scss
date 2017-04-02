@@ -1,0 +1,22 @@
+// Background Strips
+$striped__dark:   map-get($baseColours, grayIsh);
+$striped__light:  map-get($baseColours, grayMid);
+
+// Background strips (instead of using the sprite)
+$page__background:
+  repeating-linear-gradient(
+    -45deg,
+    $striped__light,
+    $striped__light 4px,
+    $striped__dark 2px,
+    $striped__dark 6px
+  );
+
+// Typography
+$typography: (
+  'weight': (
+    'normal': 400,
+    'bold': 600,
+    'bolder': 700
+  )
+);

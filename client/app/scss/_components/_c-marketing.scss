@@ -1,0 +1,23 @@
+.c-marketing {
+  margin-top: 3rem;
+
+  color: $marketing__font;
+  text-align: center;
+
+  @include media-breakpoint-up('md') {
+    margin-top: 2rem;
+  }
+
+  &__list {
+    padding-left: 0;
+    margin-top: .75rem;
+    margin-bottom: 1rem;
+
+    list-style-position: inside;
+    list-style-type: none;
+
+    &--no {
+      list-style-type: decimal;
+    }
+  }
+}

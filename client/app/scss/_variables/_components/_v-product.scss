@@ -1,0 +1,21 @@
+$products: (
+  poker: (
+    defaultState: -10px -266px,
+    hoverState:  -10px -648px
+  ),
+  casino: (
+    defaultState: -10px -138px,
+    hoverState: -10px -521px
+  ),
+  sports: (
+    defaultState: -10px -10px,
+    hoverState: -10px -394px
+  )
+);
+
+$productSize: (
+  width: 238px,
+  height: 118px
+);
+
+
