@@ -10,7 +10,7 @@
       ng-class="'c-navbar__item--' + link.cssClass"
       ng-repeat="link in $ctrl.links track by $index"
     >
-      <a href="{{link.pageUrl}}" class="c-navbar__link" ng-bind="link.name"></a>
+      <a ui-sref="{{link.pageUrl}}" class="c-navbar__link" ng-bind="link.name"></a>
     </li>
   </ul>
 </nav>

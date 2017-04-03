@@ -8,6 +8,7 @@ import Products from './products/products';
 import ProductItem from './productItem/productItem';
 import MoreInfo from './moreInfo/moreInfo';
 import FooterNav from './footerNav/footerNav';
+import TreeMenu from './treeMenu/treeMenu';
 
 let commonModule = angular.module('app.common', [
   Navbar,
@@ -18,7 +19,8 @@ let commonModule = angular.module('app.common', [
   Products,
   ProductItem,
   MoreInfo,
-  FooterNav
+  FooterNav,
+  TreeMenu
 ])
 
 .name;

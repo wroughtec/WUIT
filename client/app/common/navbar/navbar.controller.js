@@ -4,22 +4,22 @@ class NavbarController {
 
     this.links = {
       poker: {
-        pageUrl: '#',
+        pageUrl: 'about',
         name: 'Poker',
         cssClass: 'poker'
       },
       casino: {
-        pageUrl: '#',
+        pageUrl: 'about',
         name: 'Casino',
         cssClass: 'casino'
       },
       sports: {
-        pageUrl: '#',
+        pageUrl: 'about',
         name: 'Sports',
         cssClass: 'sports'
       },
       live: {
-        pageUrl: '#',
+        pageUrl: 'about',
         name: 'Live',
         cssClass: 'live'
       }

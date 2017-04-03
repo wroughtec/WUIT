@@ -43,6 +43,7 @@ let resolveToComponents = (glob = '') => {
 
 // map of all paths
 let paths = {
+  base: resolveToApp('./'),
   js: resolveToComponents('**/*!(.spec.js).js'), // exclude spec files
   appScss: resolveToApp('scss/app.scss'), // stylesheets
   scss: resolveToApp('scss/**/*.scss'), // stylesheets
@@ -52,6 +53,7 @@ let paths = {
   ],
   htmlPath: resolveToApp('**/*.html'),
   img: resolveToApp('./**/*.{png,jpg}'),
+  data:resolveToApp('./**/*.json'),
   entry: [
     'babel-polyfill',
     path.join(__dirname, root, 'app/app.js')
@@ -75,7 +77,7 @@ const processors = [
 ];
 
 // use webpack.config.js to build modules
-gulp.task('webpack', ['clean', 'copyImg', 'copyImg:watch', 'sass', 'sass:watch'], (cb) => {
+gulp.task('webpack', ['copy', 'copy:watch', 'sass', 'sass:watch'], (cb) => {
   const config = require('./webpack.dist.config');
   config.entry.app = paths.entry;
 
@@ -108,7 +110,7 @@ gulp.task('serve', ['webpack'], function() {
     serve.init({
       port: process.env.PORT || 3000,
       open: false,
-      server: './dist',
+      server: paths.dest,
       middleware: [
         historyApiFallback(),
         webpackDevMiddleware(compiler, {
@@ -124,7 +126,7 @@ gulp.task('serve', ['webpack'], function() {
     });
 
     gulp.watch(paths.scss, ['sass']).on('change', serve.reload);
-    gulp.watch(paths.img, ['copyImg']).on('change', serve.reload);
+    gulp.watch(paths.img, ['copy']).on('change', serve.reload);
 });
 
 gulp.task('sass', function () {
@@ -132,7 +134,7 @@ gulp.task('sass', function () {
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest(paths.dest))
     .pipe(serve.stream());
 });
 
@@ -140,17 +142,15 @@ gulp.task('sass:watch', function () {
   gulp.watch(paths.scss, ['sass']);
 });
 
-gulp.task('copyImg', function() {
-   gulp.src(paths.img)
-   .pipe(gulp.dest('./dist'))
+gulp.task('copy', ['clean'], function() {
+   gulp.src([paths.img, paths.data], {base: paths.base})
+   .pipe(gulp.dest(paths.dest))
    .pipe(serve.stream());
 });
 
-gulp.task('copyImg:watch', function () {
-  gulp.watch(paths.img, ['copyImg']);
+gulp.task('copy:watch', function () {
+  gulp.watch([paths.img, paths.data], ['copy']);
 });
-
-
 
 gulp.task('watch', ['serve', 'sass:watch']);
 

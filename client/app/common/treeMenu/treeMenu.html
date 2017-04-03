@@ -1,0 +1,20 @@
+<ul ng-class="$ctrl.menuClass">
+  <li
+    class="c-tree-menu__item"
+    ng-repeat="item in $ctrl.menu track by $index"
+    id="{{item.id}}"
+  >
+    <a
+      href="#"
+      ng-class="item.cssClass"
+      ng-bind="item.description"
+      ng-click="(item.leaf === true ? $ctrl.showAlert(item.content) : '')"
+    ></a>
+
+    <tree-menu
+      menu="item.menu"
+      manuClass="c-tree-menu__sub-list"
+      ng-if="item.menu"
+    ></tree-menu>
+  </li>
+</ul>

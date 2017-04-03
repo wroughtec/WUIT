@@ -1,0 +1,22 @@
+// Quick classes for the tree menu
+.c-tree-menu {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+
+  background-color: white;
+
+  &__list {
+    padding-left: .5rem;
+  }
+
+  &__item {
+    padding-bottom: .75rem;
+  }
+
+  &__sub-list {
+    padding-top: .5rem;
+    padding-left: .75rem;
+  }
+}
